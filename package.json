@@ -1,0 +1,46 @@
+{
+  "name": "jefetoken-backoffice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.ts",
+  "scripts": {
+    "build:server": "tsc",
+    "start:dev": "cross-env NODE_ENV=development ts-node-dev ./src/index.ts",
+    "start:prod": "cross-env NODE_ENV=production node ./build/index.js",
+    "jsdocs": "jsdocs index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "colors": "1.4.0",
+    "dotenv": "16.0.1",
+    "express": "4.18.1",
+    "express-fileupload": "^1.4.0",
+    "mongoose": "6.4.3",
+    "mongoose-unique-validator": "^3.1.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/express": "4.17.13",
+    "@types/express-fileupload": "^1.2.2",
+    "@types/mongoose-unique-validator": "^1.0.6",
+    "@types/morgan": "^1.9.3",
+    "@types/uuid": "^8.3.4",
+    "cross-env": "7.0.3",
+    "morgan": "1.10.0",
+    "ts-node-dev": "2.0.0",
+    "ts-standard": "11.0.0",
+    "typescript": "4.7.4"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "extends": [
+      "./node_modules/ts-standard/eslintrc.json"
+    ]
+  }
+}
