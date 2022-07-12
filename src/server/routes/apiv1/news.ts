@@ -1,6 +1,7 @@
 import { Router } from 'express'
 import { saveNews, updateNews, listAllNews, listFilteredNews, deleteNews } from '../../controllers/news'
 import { promiseEnd } from '../../utils/promiseEnd'
+import { pruebaMiddleware } from '../../middlewares/prueba'
 
 export const newsRouters = Router()
 
@@ -22,7 +23,7 @@ newsRouters.put('/:id', (req, res) => {
     }, promiseEnd)
 })
 
-newsRouters.get('/', (_req, res) => {
+newsRouters.get('/', pruebaMiddleware, (_req, res) => {
   listAllNews()
     .then((response) => {
       res.status(response.code).json(response.message).end()
